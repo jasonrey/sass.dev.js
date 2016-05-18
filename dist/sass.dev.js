@@ -1,4 +1,4 @@
-/* sass.dev.js - v0.1
+/* sass.dev.js
  * 2016-02-11
  * jsonobject@outlook.com
  */
@@ -8,8 +8,7 @@
 
 	var scriptName = 'sass.dev.js',
 		currentScript = document.currentScript || document.querySelector('script[src$="' + scriptName + '"]'),
-		base = currentScript.src.slice(0, -scriptName.length),
-		importPath = currentScript.dataset.importPath || '../css';
+		base = currentScript.src.slice(0, -scriptName.length);
 
 	var SassScript = document.createElement('script');
 
@@ -71,6 +70,8 @@
 			};
 
 		sass.importer(function(request, done) {
+			var importPath = currentScript.dataset.importPath || (request.options.isSass ? '../sass' : '../scss');
+
 			sass.preloadFiles(importPath, '', [request.current + '.' + (request.options.isSass ? 'sass' : 'scss')], function() {
 				done();
 			});
