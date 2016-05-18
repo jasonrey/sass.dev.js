@@ -1,5 +1,6 @@
 /* sass.dev.js
- * 2016-02-11
+ * v0.2
+ * 2016-05-18
  * jsonobject@outlook.com
  */
 
